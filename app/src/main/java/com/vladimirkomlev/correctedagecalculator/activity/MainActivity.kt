@@ -4,18 +4,17 @@ import android.app.DatePickerDialog
 import android.content.Intent
 import androidx.appcompat.app.AppCompatActivity
 import android.os.Bundle
-import com.vladimirkomlev.correctedagecalculator.R
 import com.vladimirkomlev.correctedagecalculator.utils.validateDateOfBirth
 import com.vladimirkomlev.correctedagecalculator.utils.validateGestAge
 import kotlinx.android.synthetic.main.activity_main.*
 import java.lang.Long.parseLong
 import java.text.SimpleDateFormat
-import java.time.LocalDate
-import java.time.LocalDate.*
-import java.time.ZoneId
-import java.time.temporal.ChronoUnit.WEEKS
 import java.util.*
 import java.util.Calendar.*
+import com.vladimirkomlev.correctedagecalculator.R
+import org.joda.time.DateTime
+import org.joda.time.Weeks
+
 
 class MainActivity : AppCompatActivity() {
     private val calendar = getInstance()
@@ -24,7 +23,7 @@ class MainActivity : AppCompatActivity() {
         super.onCreate(savedInstanceState)
         setContentView(R.layout.activity_main)
 
-        date_of_birth.apply {
+        date_of_birth_input.apply {
             isFocusableInTouchMode = false
             isFocusable = false
             setOnClickListener {
@@ -40,14 +39,14 @@ class MainActivity : AppCompatActivity() {
 
         btn_caclulate.setOnClickListener {
             if (
-                validateGestAge(this, gest_age) &&
+                validateGestAge(this, gest_age_input) &&
                 validateDateOfBirth(
                     this,
-                    date_of_birth
+                    date_of_birth_input
                 )
             ) {
-                val postNatalAge = calculatePostNatalAge(getDate())
-                val gestAge = parseLong(gest_age.text.toString())
+                val postNatalAge = calculatePostNatalAge(calendar.time).toLong()
+                val gestAge = parseLong(gest_age_input.text.toString())
 
                 val intent = Intent(this@MainActivity, ResultActivity::class.java)
                 intent.putExtra("post_natal_age", postNatalAge)
@@ -55,17 +54,12 @@ class MainActivity : AppCompatActivity() {
                 startActivity(intent)
             }
         }
-
     }
 
     private fun setDate() {
-        val sdf = SimpleDateFormat("dd MMMM yyyy", Locale.US)
-        date_of_birth.setText(sdf.format(calendar.time))
+        val sdf = SimpleDateFormat("dd MMMM yyyy", Locale("ru", "RU"))
+        date_of_birth_input.setText(sdf.format(calendar.time))
     }
-
-    private fun getDate(): LocalDate = calendar.time.toInstant().atZone(ZoneId.systemDefault())
-        .toLocalDate()
-
 
     private val onDateSetListener = DatePickerDialog.OnDateSetListener { view, year, month, dayOfMonth ->
         calendar[YEAR] = year
@@ -74,5 +68,6 @@ class MainActivity : AppCompatActivity() {
         setDate()
     }
 
-    fun calculatePostNatalAge(date: LocalDate) = WEEKS.between(date, now())
+    private fun calculatePostNatalAge(date: Date) =
+        Weeks.weeksBetween(DateTime(date), DateTime(Date())).weeks
 }

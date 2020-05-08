@@ -1,16 +1,32 @@
 package com.vladimirkomlev.correctedagecalculator.activity
 
 import android.content.Intent
+import android.graphics.Color
 import androidx.appcompat.app.AppCompatActivity
 import android.os.Bundle
+import android.view.MenuItem
+import androidx.appcompat.app.ActionBar
 import com.vladimirkomlev.correctedagecalculator.R
+import com.vladimirkomlev.correctedagecalculator.utils.spellMonth
+import com.vladimirkomlev.correctedagecalculator.utils.spellWeek
 import kotlinx.android.synthetic.main.activity_result.*
+import kotlinx.android.synthetic.main.toolbar.*
+import kotlinx.android.synthetic.main.toolbar.toolbar
 
 class ResultActivity : AppCompatActivity() {
 
     override fun onCreate(savedInstanceState: Bundle?) {
         super.onCreate(savedInstanceState)
         setContentView(R.layout.activity_result)
+
+        toolbar_text_view.text = getString(R.string.result_toolbar_title)
+        toolbar.setBackgroundColor(resources.getColor(R.color.green))
+        setSupportActionBar(toolbar)
+
+        if (supportActionBar != null) {
+            supportActionBar!!.setDisplayHomeAsUpEnabled(true)
+            supportActionBar!!.setDisplayShowHomeEnabled(true)
+        }
 
         val postNatalAge = intent.extras!!["post_natal_age"] as Long
         val gestAge = intent.extras!!["gest_age"] as Long
@@ -28,7 +44,7 @@ class ResultActivity : AppCompatActivity() {
             )
         } else {
             result.text = getString(
-                R.string.corrected_age,
+                R.string.corrected_age_result,
                 correctedAgeInWeeks,
                 spellWeek(correctedAgeInWeeks),
                 correctedAgeInMonths,
@@ -55,17 +71,8 @@ class ResultActivity : AppCompatActivity() {
         }
     }
 
-    private fun spellMonth(months: Long) =
-        when {
-            months in 2..4 -> "месяца"
-            months == 1L -> "месяц"
-            else -> "месяцев"
-        }
-
-    private fun spellWeek(weeks: Long) =
-        when {
-            (weeks % 10 == 1L && weeks != 11L)  -> "неделю"
-            weeks in 11..20 || weeks % 10 in 5..9 || weeks % 10 == 0L -> "недель"
-            else -> "недели"
-        }
+    override fun onOptionsItemSelected(item: MenuItem): Boolean {
+        this.finish()
+        return true
+    }
 }

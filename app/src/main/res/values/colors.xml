@@ -1,14 +1,16 @@
 <?xml version="1.0" encoding="utf-8"?>
 <resources>
-    <color name="colorPrimary">#1b3db5</color>
-    <color name="colorPrimaryDark">#1b3db5</color>
-    <color name="colorAccent">#1b3db5</color>
-    <color name="dimGray">#696969</color>
+    <color name="colorPrimary">#3f8cd4</color>
+    <color name="colorPrimaryDark">#3f8cd4</color>
+    <color name="colorAccent">#3f8cd4</color>
     <color name="white">#FFF</color>
-    <color name="blue">#1b3db5</color>
-    <color name="deepBlue">#0e1d9e</color>
+    <color name="psycho">#4267b2</color>
+    <color name="psycho_dark">#365899</color>
     <color name="black">#000</color>
-    <color name="darkGray">#A9A9A9</color>
-    <color name="rippleBackBtn">#D3D3D3</color>
-
+    <color name="physical">#0073b1</color>
+    <color name="physical_dark">#006097</color>
+    <color name="main_color">#3f8cd4</color>
+    <color name="back_to_calc_btn">#98d8f4</color>
+    <color name="green">#42b72a</color>
+    <color name="darkGreen">#2B9217</color>
 </resources>
