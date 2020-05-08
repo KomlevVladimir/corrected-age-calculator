@@ -14,5 +14,3 @@
 текущий скорригированный возраст**
 
 ![3](https://user-images.githubusercontent.com/19308409/81403025-2fd7ef00-913b-11ea-8d6d-516f1642cef3.jpg)
-![4](https://user-images.githubusercontent.com/19308409/81403029-31a1b280-913b-11ea-920d-b644866068eb.jpg)
-
