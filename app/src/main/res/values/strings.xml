@@ -51,6 +51,7 @@
     <string name="splash_title">Калькулятор скорригированного возраста</string>
     <string name="date_of_birth_hint">Введите дату родов</string>
     <string name="gest_age_hint">Введите гестационный срок</string>
+    <string name="physical_toolbar_title">Физическое развитие</string>
 
 
 </resources>

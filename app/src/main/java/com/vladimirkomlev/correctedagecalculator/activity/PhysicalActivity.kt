@@ -15,7 +15,7 @@ class PhysicalActivity : AppCompatActivity() {
         super.onCreate(savedInstanceState)
         setContentView(R.layout.activity_physical)
 
-        toolbar_text_view.text = getString(R.string.psycho_toolbar_title)
+        toolbar_text_view.text = getString(R.string.physical_toolbar_title)
         toolbar.setBackgroundColor(resources.getColor(R.color.physical))
         setSupportActionBar(toolbar)
 
