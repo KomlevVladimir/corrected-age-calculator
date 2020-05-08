@@ -4,15 +4,15 @@
  на текущий день. Пользователь вводит срок беременности в неделях, на которых произошли роды, а 
  также дату родов и нажимает расчитать**
  
-![3](https://user-images.githubusercontent.com/19308409/81400959-f3a28f80-9136-11ea-90c7-1e3ff0380211.jpg)
+![1](https://user-images.githubusercontent.com/19308409/81403017-2d759500-913b-11ea-8dee-a2abe8aa605b.jpg)
 
 **В результате расчёта выводится кол-во полных недель и полных месяцев скорригоированного возраста.**
 
-![4](https://user-images.githubusercontent.com/19308409/81400965-f604e980-9136-11ea-8103-d22eb6648f02.jpg)
+![2](https://user-images.githubusercontent.com/19308409/81403021-2ea6c200-913b-11ea-91d3-755092793ef4.jpg)
 
-**После чего пользователь может посмотреть нормы психомотрного и физического развития ребёнка на 
+**После чего пользователь может посмотреть ориентиры психомотрного и физического развития ребёнка на 
 текущий скорригированный возраст**
 
-![5](https://user-images.githubusercontent.com/19308409/81400970-f7cead00-9136-11ea-9f79-4a3e7cb15360.jpg)
-![6](https://user-images.githubusercontent.com/19308409/81400976-f8ffda00-9136-11ea-97c6-e53e4568d629.jpg)
+![3](https://user-images.githubusercontent.com/19308409/81403025-2fd7ef00-913b-11ea-8d6d-516f1642cef3.jpg)
+![4](https://user-images.githubusercontent.com/19308409/81403029-31a1b280-913b-11ea-920d-b644866068eb.jpg)
 

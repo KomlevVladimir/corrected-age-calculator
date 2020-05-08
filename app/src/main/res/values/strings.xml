@@ -45,9 +45,9 @@
     <string name="back_to_result_btn">Вернуться к результату</string>
     <string name="result_toolbar_title">Результат</string>
     <string name="your_result">Ваш результат:</string>
-    <string name="psycho_title">Нормы психомоторного развития:</string>
+    <string name="psycho_title">Ориентиры психомоторного развития:</string>
     <string name="psycho_toolbar_title">Психомоторное развитие</string>
-    <string name="physycal_title">Нормы физического развития:</string>
+    <string name="physycal_title">Ориентиры физического развития:</string>
     <string name="splash_title">Калькулятор скорригированного возраста</string>
     <string name="date_of_birth_hint">Введите дату родов</string>
     <string name="gest_age_hint">Введите гестационный срок</string>
